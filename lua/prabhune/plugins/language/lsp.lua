@@ -7,7 +7,7 @@ return {
       {
         --- LuaLS --
         "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
+        ft = "lua", -- only load on lua filetypes
         opts = {
           library = {
             -- see the configuration section for more details
@@ -15,18 +15,18 @@ return {
             { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           },
         },
-
       },
     },
 
     config = function()
-      -- hey Lua LSP I know how to do a bunch of stuff you might
-      -- not have known that I knew how to do
+      -- "hey Lua LSP I know how to do a bunch of stuff you might
+      -- not have known that I knew how to do" vvv
+      -- get capabilities from blink.cmp
       local capabilities = require('blink.cmp').get_lsp_capabilities()
-      local lspconfig = require("lspconfig")
 
       -- lua language server (brew install lsp-language-server)
-      lspconfig.lua_ls.setup { capabilities = capabilities }
+      vim.lsp.config['lua_ls'] = { capabilities = capabilities } -- set capabilities
+      vim.lsp.enable('lua_ls')                                   -- enable for all lua files
 
       -- autocmd: start treesitter when any file opens (required for treesitter main branch)
       -- required for FANCY and SPICY syntax highlighting

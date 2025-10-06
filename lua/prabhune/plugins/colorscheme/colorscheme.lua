@@ -1,15 +1,30 @@
+return {
+  "ellisonleao/gruvbox.nvim",
+  priority = 1000,
+  config = true,
+  opts = {
+    transparent_mode = true,
+  }
+}
+
 -- return {
---   "ellisonleao/gruvbox.nvim",
+--   "folke/tokyonight.nvim",
+--   lazy = false,
 --   priority = 1000,
---   config = true,
---   opts = {}
+--   opts = {
+--     style = "storm"
+--   },
 -- }
 
-return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-    style = "storm"
-  },
-}
+-- return {
+--   "rebelot/kanagawa.nvim"
+-- }
+
+-- return {
+--   "catppuccin/nvim",
+--   name = "catppuccin",
+--   priority = 1000,
+--   opts = {
+--     transparent_background = true,
+--   },
+-- }
