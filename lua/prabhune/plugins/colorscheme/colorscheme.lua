@@ -12,7 +12,11 @@ return {
 --   lazy = false,
 --   priority = 1000,
 --   opts = {
---     style = "storm"
+--     style = "night",
+--     transparent = true,
+--     styles = {
+--       sidebars = "transparent",
+--     },
 --   },
 -- }
 

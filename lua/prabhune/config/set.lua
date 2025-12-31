@@ -27,10 +27,10 @@ vim.opt.ignorecase = true                                      -- ignore case in
 vim.opt.smartcase = true                                       -- override ignorecase if search contains uppercase letters
 vim.opt.showmode = false                                       -- don't show mode since we use a statusline
 vim.diagnostic.config { virtual_text = true }                  -- disable virtual text for diagnostics
-
 vim.g.copilot_enabled = 0                                      -- disable copilot by default
+vim.g.copilot_no_tab_map = true                                -- remove tab command from copilot
 vim.g.netrw_liststyle = 3                                      -- tree view in netrw
 
 -- colorscheme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd.colorscheme "gruvbox"
+vim.cmd.colorscheme "tokyonight"
