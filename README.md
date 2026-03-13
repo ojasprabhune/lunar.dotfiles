@@ -1,2 +1,2 @@
 # lunar.dotfiles
-My entire neovim setup.
+My entire Wezterm, fish shell, and Neovim setup.
