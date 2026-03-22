@@ -1,1 +1,0 @@
-/Users/ojasprabhune/dotfiles/fish
