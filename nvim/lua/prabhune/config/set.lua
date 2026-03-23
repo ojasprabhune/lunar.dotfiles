@@ -17,6 +17,7 @@ vim.opt.showcmd = true                                         -- show (partial)
 
 vim.opt.swapfile = false                                       -- disable swapfile
 vim.opt.backup = false                                         -- disable backup
+vim.opt.writebackup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- set undo directory
 vim.opt.undofile = true                                        -- persistent undo
 vim.opt.clipboard = "unnamed"                                  -- use system clipboard
@@ -26,11 +27,11 @@ vim.opt.incsearch = true                                       -- show where the
 vim.opt.ignorecase = true                                      -- ignore case in search patterns
 vim.opt.smartcase = true                                       -- override ignorecase if search contains uppercase letters
 vim.opt.showmode = false                                       -- don't show mode since we use a statusline
-vim.diagnostic.config { virtual_text = true }                  -- disable virtual text for diagnostics
+vim.diagnostic.config({ virtual_text = true })                 -- disable virtual text for diagnostics
 vim.g.copilot_enabled = 0                                      -- disable copilot by default
 vim.g.copilot_no_tab_map = true                                -- remove tab command from copilot
 vim.g.netrw_liststyle = 3                                      -- tree view in netrw
 
 -- colorscheme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd.colorscheme "gruvbox"
+vim.cmd.colorscheme("gruvbox")
