@@ -15,8 +15,12 @@ vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")   
 vim.keymap.set("n", "<leader>tt", vim.cmd.FloatermNew, { desc = "Open terminal" })    -- open terminal
 
 -- click spacebar then "s" to change all instances of the word the cursor is above
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-  { desc = "Search and replace", silent = true })
+vim.keymap.set(
+  "n",
+  "<leader>s",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Search and replace", silent = true }
+)
 
 -- code actions
 vim.keymap.set({ "n", "x" }, "<leader>ca", function()
@@ -25,16 +29,18 @@ vim.keymap.set({ "n", "x" }, "<leader>ca", function()
 end, { noremap = true, silent = true, desc = "Code action" })
 
 -- copilot accept keybind
-vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', {
+vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   expr = true,
-  replace_keycodes = false
+  replace_keycodes = false,
 })
 
 -- search and replace in line
 vim.keymap.set("n", "<leader>fl", function()
   -- Prompt for search term
   local str1 = vim.fn.input("Find: ")
-  if str1 == "" then return end
+  if str1 == "" then
+    return
+  end
   -- Prompt for replacement term
   local str2 = vim.fn.input("Replace with: ")
   -- Run substitution on the current line
@@ -42,3 +48,13 @@ vim.keymap.set("n", "<leader>fl", function()
   -- Clear search highlight
   vim.cmd("noh")
 end, { desc = "Search and replace in current line", silent = true })
+
+-- toggle Copilot
+vim.keymap.set("n", "<leader>tc", function()
+  local copilot = require("copilot")
+  if copilot.is_enabled() then
+    copilot.disable()
+  else
+    copilot.enable()
+  end
+end, { desc = "toggle Copilot", silent = true })
