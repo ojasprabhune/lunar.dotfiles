@@ -49,12 +49,7 @@ vim.keymap.set("n", "<leader>fl", function()
   vim.cmd("noh")
 end, { desc = "Search and replace in current line", silent = true })
 
--- toggle Copilot
-vim.keymap.set("n", "<leader>tc", function()
-  local copilot = require("copilot")
-  if copilot.is_enabled() then
-    copilot.disable()
-  else
-    copilot.enable()
-  end
-end, { desc = "toggle Copilot", silent = true })
+-- enable Copilot
+vim.keymap.set("n", "<leader>ec", "<cmd>Copilot enable<CR>", { desc = "enable Copilot", silent = true })
+-- disable Copilot
+vim.keymap.set("n", "<leader>dc", "<cmd>Copilot disable<CR>", { desc = "disable Copilot", silent = true })

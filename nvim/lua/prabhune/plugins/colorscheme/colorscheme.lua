@@ -1,11 +1,11 @@
-return {
-  "ellisonleao/gruvbox.nvim",
-  priority = 1000,
-  config = true,
-  opts = {
-    transparent_mode = true,
-  }
-}
+-- return {
+--   "ellisonleao/gruvbox.nvim",
+--   priority = 1000,
+--   config = true,
+--   opts = {
+--     transparent_mode = true,
+--   }
+-- }
 
 -- return {
 --   "folke/tokyonight.nvim",
@@ -19,6 +19,15 @@ return {
 --     },
 --   },
 -- }
+
+return {
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
+  opts = {
+    transparent_background = true,
+  },
+}
 
 -- return {
 --   "rebelot/kanagawa.nvim"

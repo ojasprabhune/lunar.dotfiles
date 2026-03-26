@@ -1,7 +1,9 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.color_scheme = "Gruvbox Dark (Gogh)"
+-- config.color_scheme = "Gruvbox Dark (Gogh)"
+-- config.color_scheme = "tokyonight-storm"
+config.color_scheme = "catppuccin-macchiato"
 config.font = wezterm.font("Iosevka Nerd Font Mono")
 config.font_size = 16
 

@@ -34,4 +34,6 @@ vim.g.netrw_liststyle = 3                                      -- tree view in n
 
 -- colorscheme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd.colorscheme("gruvbox")
+-- vim.cmd.colorscheme("gruvbox")
+-- vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("catppuccin-macchiato")
