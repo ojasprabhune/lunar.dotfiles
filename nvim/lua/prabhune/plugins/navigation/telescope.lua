@@ -3,11 +3,12 @@ return {
   tag = "0.1.8",
   dependencies = { "nvim-lua/plenary.nvim" },
   module = "telescope",
+  winblend = 0,
 
   config = function()
-    require('telescope').setup {}
+    require("telescope").setup({})
 
-    local builtin = require('telescope.builtin')
+    local builtin = require("telescope.builtin")
 
     vim.keymap.set("n", "<leader>ff", ":Telescope find_files hidden=true <CR>", { desc = "File search" })
     vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>", { desc = "File browser" })
@@ -19,13 +20,13 @@ return {
     end, { desc = "Project search" })
 
     -- search for either a word under cursor or entire phrase under cursor
-    vim.keymap.set('n', '<leader>fw', function()
+    vim.keymap.set("n", "<leader>fw", function()
       local word = vim.fn.expand("<cword>")
       builtin.grep_string({ search = word })
     end, { desc = "Word search (under cursor)" })
-    vim.keymap.set('n', '<leader>fW', function()
+    vim.keymap.set("n", "<leader>fW", function()
       local word = vim.fn.expand("<cWORD>")
       builtin.grep_string({ search = word })
     end, { desc = "Phrase search (under cursor)" })
-  end
+  end,
 }
