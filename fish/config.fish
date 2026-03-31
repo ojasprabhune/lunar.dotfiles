@@ -1,9 +1,8 @@
 set fish_greeting
-if status is-interactive
-# Commands to run in interactive sessions can go here
-end
 
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+set -gx DIRENV_LOG_FORMAT ""
 
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source
+direnv hook fish | source
