@@ -50,6 +50,9 @@ vim.keymap.set("n", "<leader>fl", function()
 end, { desc = "Search and replace in current line", silent = true })
 
 -- enable Copilot
-vim.keymap.set("n", "<leader>ec", "<cmd>Copilot enable<CR>", { desc = "enable Copilot", silent = true })
+vim.keymap.set("n", "<leader>ec", "<cmd>Copilot enable<CR>", { desc = "Enable Copilot", silent = true })
 -- disable Copilot
-vim.keymap.set("n", "<leader>dc", "<cmd>Copilot disable<CR>", { desc = "disable Copilot", silent = true })
+vim.keymap.set("n", "<leader>dc", "<cmd>Copilot disable<CR>", { desc = "Disable Copilot", silent = true })
+
+-- markdown preview
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown preview", silent = true })
