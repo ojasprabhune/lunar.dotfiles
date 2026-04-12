@@ -1,3 +1,15 @@
+-- opengl shader extensions
+vim.filetype.add({
+  extension = {
+    vert = "glsl",
+    frag = "glsl",
+    comp = "glsl",
+    geom = "glsl",
+    tesc = "glsl",
+    tese = "glsl",
+  },
+})
+
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 

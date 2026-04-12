@@ -5,7 +5,7 @@ return {
       -- BlinkCMP
       "saghen/blink.cmp",
       {
-        --- LuaLS --
+        --- LuaLS ---
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua filetypes
         opts = {
@@ -22,11 +22,11 @@ return {
       -- "hey Lua LSP I know how to do a bunch of stuff you might
       -- not have known that I knew how to do" vvv
       -- get capabilities from blink.cmp
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       -- lua language server (brew install lsp-language-server)
-      vim.lsp.config['lua_ls'] = { capabilities = capabilities } -- set capabilities
-      vim.lsp.enable('lua_ls')                                   -- enable for all lua files
+      vim.lsp.config["lua_ls"] = { capabilities = capabilities } -- set capabilities
+      vim.lsp.enable("lua_ls")                                -- enable for all lua files
 
       -- autocmd: start treesitter when any file opens (required for treesitter main branch)
       -- required for FANCY and SPICY syntax highlighting
@@ -37,32 +37,24 @@ return {
       })
 
       -- key configuration entry point for determining what an lsp should do
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('my.lsp', {}),
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("my.lsp", {}),
 
         -- called every time we attach a file and language server
         callback = function(args)
           local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then return end
+          if not client then
+            return
+          end
 
-          --- AUTO FORMATTING on save
-
-          -- does client actually support formatting
-          if client:supports_method('textDocument/formatting') then
-            -- create autocmd
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
-
-              -- only listen to LSPs inside current buffer (e.g., don't do lua lsp inside c file)
-              buffer = args.buf,
-              -- runs lsp formatting for current buffer
-              callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
-              end,
-            })
+          -- FIX: resolve the Position Encoding Warning (UTF-8 vs UTF-16)
+          -- Ruff uses UTF-8, Pyright/Copilot often default to UTF-16.
+          if client.name == "ruff" then
+            -- disable Ruff's hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
           end
         end,
       })
     end,
-  }
+  },
 }
