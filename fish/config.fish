@@ -6,3 +6,7 @@ set -gx DIRENV_LOG_FORMAT ""
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source
 direnv hook fish | source
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/Users/ojasprabhune/.local/bin" $PATH
