@@ -1,4 +1,5 @@
 .git/
+**/.git/
 undodir/
 after/
 fish/fish_variables
