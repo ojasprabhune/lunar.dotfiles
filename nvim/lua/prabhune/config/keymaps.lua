@@ -13,8 +13,8 @@ vim.keymap.set("n", "<leader>kk", "<cmd>bprev<CR>", { desc = "Previous buffer" }
 vim.keymap.set("n", "<leader>dd", "<cmd>bdelete<CR>", { desc = "Delete buffer" }) -- delete current buffer
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>") -- make it rain
 vim.keymap.set("n", "<leader>tt", vim.cmd.FloatermNew, { desc = "Open terminal" }) -- open terminal
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Goto definition" }) -- definition
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" }) -- rename
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto definition" }) -- definition
+vim.keymap.set("n", "rn", vim.lsp.buf.rename, { desc = "Rename symbol" }) -- rename
 
 -- click spacebar then "s" to change all instances of the word the cursor is above
 vim.keymap.set(
