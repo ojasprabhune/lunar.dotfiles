@@ -1,0 +1,18 @@
+{
+  "Header for CS1": {
+    "prefix": "header",
+    "body": [
+      "// Ojas Prabhune",
+      "// 1175626",
+      "// This program $0"
+    ],
+    "description": "Header template for Computer Science 1"
+  },
+  "Print Line": {
+    "prefix": "sysout",
+    "body": [
+      "System.out.println($1);"
+    ],
+    "description": "System.out.println"
+  }
+}

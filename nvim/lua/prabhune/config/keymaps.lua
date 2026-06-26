@@ -8,8 +8,8 @@ vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle, { desc = "File explore
 vim.keymap.set("n", "<C-j>", "<C-w>w", { desc = "Editor and explorer navigation" }) -- switch between editor and file explorer
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy" }) -- lazy.nvim plugin manager
 vim.keymap.set("n", "<leader>m", vim.cmd.Mason, { desc = "Mason" }) -- mason.nvim lsp package manager
-vim.keymap.set("n", "<leader>jj", "<cmd>bnext<CR>", { desc = "Next buffer" }) -- next buffer
-vim.keymap.set("n", "<leader>kk", "<cmd>bprev<CR>", { desc = "Previous buffer" }) -- previous buffer
+vim.keymap.set("n", "<leader>kk", "<cmd>bnext<CR>", { desc = "Next buffer" }) -- next buffer
+vim.keymap.set("n", "<leader>jj", "<cmd>bprev<CR>", { desc = "Previous buffer" }) -- previous buffer
 vim.keymap.set("n", "<leader>dd", "<cmd>bdelete<CR>", { desc = "Delete buffer" }) -- delete current buffer
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>") -- make it rain
 vim.keymap.set("n", "<leader>tt", vim.cmd.FloatermNew, { desc = "Open terminal" }) -- open terminal
