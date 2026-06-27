@@ -1,0 +1,19 @@
+{
+  "Header for PCM1": {
+    "prefix": "header",
+    "body": [
+      "// Ojas Prabhune",
+      "// 1175626",
+      "// ${1:Name} ${2:Number}, Exercise ${3:Number}",
+      "// This program ${0:Explanation}"
+    ],
+    "description": "Header template for Programming Concepts and Method 1"
+  },
+  "Print Line": {
+    "prefix": "scout",
+    "body": [
+      "std::cout << ($1) << std::endl;"
+    ],
+    "description": "std::cout"
+  }
+}

@@ -4,12 +4,12 @@
     "body": [
       "// Ojas Prabhune",
       "// 1175626",
-      "// This program $0"
+      "// This program ${0:Explanation}"
     ],
     "description": "Header template for Computer Science 1"
   },
   "Print Line": {
-    "prefix": "sysout",
+    "prefix": "outsys",
     "body": [
       "System.out.println($1);"
     ],
