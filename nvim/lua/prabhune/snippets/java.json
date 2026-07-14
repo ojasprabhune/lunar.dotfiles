@@ -7,12 +7,5 @@
       "// This program ${0:Explanation}"
     ],
     "description": "Header template for Computer Science 1"
-  },
-  "Print Line": {
-    "prefix": "outsys",
-    "body": [
-      "System.out.println($1);"
-    ],
-    "description": "System.out.println"
   }
 }
