@@ -58,6 +58,3 @@ vim.keymap.set("n", "<leader>dc", "<cmd>Copilot disable<CR>", { desc = "Disable 
 
 -- markdown preview
 vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "Markdown preview", silent = true })
-
--- disable macros
-vim.keymap.set("n", "q", "<Nop>")
