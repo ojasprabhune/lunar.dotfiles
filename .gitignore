@@ -2,7 +2,7 @@
 **/.git/
 undodir/
 after/
-fish/fish_variables
+fish/fish_variables*
 nvim/lazy_lock.json
 github-copilot/
 fish/functions
