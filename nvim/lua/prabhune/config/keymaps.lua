@@ -5,7 +5,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- move line up
 -- general commands
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Project view" }) -- open file explorer
 vim.keymap.set("n", "<leader>ee", vim.cmd.NvimTreeToggle, { desc = "File explorer" }) -- toggle file explorer
-vim.keymap.set("n", "<C-j>", "<C-w>w", { desc = "Editor and explorer navigation" }) -- switch between editor and file explorer
+vim.keymap.set("n", "<C-j>", "<C-w>w", { desc = "Navigation" }) -- navigation between neovim panes
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy, { desc = "Lazy" }) -- lazy.nvim plugin manager
 vim.keymap.set("n", "<leader>m", vim.cmd.Mason, { desc = "Mason" }) -- mason.nvim lsp package manager
 vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>") -- make it rain
