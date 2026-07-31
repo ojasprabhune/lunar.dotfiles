@@ -7,3 +7,6 @@ nvim/lazy_lock.json
 github-copilot/
 fish/functions
 raycast/
+cagent/
+gh/
+wandb/

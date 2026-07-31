@@ -24,7 +24,8 @@ vim.opt.smarttab = true -- insert tabs on the start of a line according to shift
 vim.opt.number = true -- show line numbers
 vim.opt.cursorline = true -- highlight current line
 vim.opt.signcolumn = "yes:1" -- always show signcolumn
-vim.opt.scrolloff = 8 -- minimum lines to keep above and below cursor
+vim.opt.scrolloff = 10 -- minimum lines to keep above and below cursor
+vim.opt.sidescrolloff = 8
 vim.opt.showcmd = true -- show (partial) command in status line
 
 vim.opt.swapfile = false -- disable swapfile

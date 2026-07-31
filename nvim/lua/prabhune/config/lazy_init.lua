@@ -17,6 +17,7 @@ require("lazy").setup({
   -- all directories and subdirectories where plugins are imported and loaded
   spec = {
     { import = "prabhune.plugins.colorscheme" },
+    { import = "prabhune.plugins.fun" },
     { import = "prabhune.plugins.icons" },
     { import = "prabhune.plugins.language" },
     { import = "prabhune.plugins.navigation" },
