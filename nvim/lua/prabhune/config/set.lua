@@ -45,6 +45,9 @@ vim.g.copilot_enabled = 0 -- disable copilot by default
 vim.g.copilot_no_tab_map = true -- remove tab command from copilot
 vim.g.netrw_liststyle = 3 -- tree view in netrw
 vim.opt.splitbelow = true
+vim.opt.fillchars:append({ diff = "╱" })
+vim.opt.diffopt:append("linematch:60")
+vim.opt.diffopt:append("iwhite")
 
 -- colorscheme
 vim.o.background = "dark" -- or "light" for light mode

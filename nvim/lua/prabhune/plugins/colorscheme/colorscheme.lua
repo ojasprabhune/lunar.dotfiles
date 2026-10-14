@@ -8,22 +8,24 @@
 -- }
 
 return {
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-    style = "night",
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-      floats = "transparent",
-    },
-    on_highlights = function(hl, c)
-      local separator = c.fg_gutter -- #3b4261
-      hl.WinSeparator = { fg = separator, bold = true }
-      hl.NvimTreeWinSeparator = { fg = separator, bg = c.none }
-    end,
-  },
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {
+		style = "night",
+		transparent = true,
+		styles = {
+			sidebars = "transparent",
+			floats = "transparent",
+		},
+		on_highlights = function(hl, c)
+			local separator = c.fg_gutter -- #3b4261
+			hl.WinSeparator = { fg = separator, bold = true }
+			hl.NvimTreeWinSeparator = { fg = separator, bg = c.none }
+			hl.DiffDelete = { bg = c.diff.delete, fg = c.fg_gutter } -- dim hatching on filler lines
+			hl.DiffChange = { bg = c.none }
+		end,
+	},
 }
 
 -- return {

@@ -7,4 +7,11 @@ return {
 		{ "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", desc = "Current file history" },
 		{ "<leader>gq", "<cmd>DiffviewClose<cr>", desc = "Close diffview" },
 	},
+	opts = {
+		enhanced_diff_hl = true, -- cleaner add/delete colors in the diff panes
+		file_panel = {
+			listing_style = "list", -- flat list instead of a folder tree
+			win_config = { width = 35 },
+		},
+	},
 }

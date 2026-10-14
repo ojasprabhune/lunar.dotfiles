@@ -80,17 +80,6 @@ vim.keymap.set("n", "<leader>dc", "<cmd>Copilot disable<CR>", { desc = "Disable 
 
 vim.keymap.set("n", "<leader>dt", "<cmd>Gitsigns diffthis HEAD<CR>", { desc = "Git diff" })
 
--- close the gitsigns:// split and turn off diff mode in all windows
-local function close_gitsigns_diff()
-	vim.cmd("diffoff!")
-	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-		local buf = vim.api.nvim_win_get_buf(win)
-		if vim.api.nvim_buf_get_name(buf):match("^gitsigns://") then
-			vim.api.nvim_win_close(win, true)
-		end
-	end
-end
-
 -- ============================================================================
 -- buffers & sessions
 -- ============================================================================
@@ -99,14 +88,9 @@ vim.keymap.set("n", "<leader>kk", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>jj", "<cmd>bprev<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "Quit all" })
 vim.keymap.set("n", "<leader>cc", "<cmd>AutoSession delete<CR>", { desc = "Delete session" })
+vim.keymap.set("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
 
 vim.keymap.set("n", "<leader>dd", function()
-	-- in a diff: only close the diff window and leave the buffer list alone
-	if vim.wo.diff then
-		close_gitsigns_diff()
-		return
-	end
-
 	-- listed buffers that are real files (excludes special buftypes like terminals)
 	local real_bufs = vim.tbl_filter(function(buf)
 		return buf.listed == 1 and vim.bo[buf.bufnr].buftype == ""
