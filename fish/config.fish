@@ -1,12 +1,9 @@
 set fish_greeting
 
-set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
-set -gx DIRENV_LOG_FORMAT ""
-
-uv generate-shell-completion fish | source
-uvx --generate-shell-completion fish | source
 direnv hook fish | source
 
-
-# Added by Antigravity CLI installer
+# added by Antigravity CLI installer
 set -gx PATH "/Users/ojasprabhune/.local/bin" $PATH
+
+# opencode
+fish_add_path /Users/ojasprabhune/.opencode/bin

@@ -10,3 +10,6 @@ raycast/
 cagent/
 gh/
 wandb/
+fish/completions/uv.fish
+direnv/
+opencode/

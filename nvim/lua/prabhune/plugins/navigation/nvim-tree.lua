@@ -10,5 +10,12 @@ return {
 		filters = {
 			dotfiles = false,
 		},
+		view = {
+			width = {
+				min = 30,
+				max = 50,
+				padding = 1,
+			},
+		},
 	},
 }
