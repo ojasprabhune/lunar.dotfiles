@@ -1,3 +1,18 @@
+-- show a plain label for nvim-tree instead of its buffer name
+local nvim_tree = {
+	filetypes = { "NvimTree" },
+	sections = { lualine_a = {
+		function()
+			return "nvim-tree"
+		end,
+	} },
+	inactive_sections = { lualine_c = {
+		function()
+			return "nvim-tree"
+		end,
+	} },
+}
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -11,25 +26,8 @@ return {
 			globalstatus = false,
 		},
 		sections = {
-			lualine_a = { "mode" },
-			lualine_b = { { "filetype", icons_enabled = false, fmt = string.upper } },
-			lualine_c = { { "filename", path = 1 } }, -- show relative path
-			lualine_x = {
-				"filesize",
-				{ "filename", file_status = false, symbols = { unnamed = "" } },
-				{
-					"diff",
-					symbols = { added = "⊞ ", modified = "▣ ", removed = "⊟ " },
-				},
-			},
-			lualine_y = {
-				"location",
-				"progress",
-				function()
-					return tostring(vim.api.nvim_buf_line_count(0))
-				end,
-			},
-			lualine_z = { "encoding", "branch" },
+			lualine_x = { "filetype" }, -- default minus encoding and fileformat
 		},
+		extensions = { nvim_tree },
 	},
 }
