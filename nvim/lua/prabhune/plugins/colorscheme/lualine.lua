@@ -23,9 +23,10 @@ return {
 			-- theme = "catppuccin-mocha", -- set theme to catppuccin-mocha
 			component_separators = "",
 			section_separators = "",
-			globalstatus = false,
+			globalstatus = true,
 		},
 		sections = {
+			lualine_c = { { "filename", path = 4 } }, -- parent dir + filename
 			lualine_x = { "filetype" }, -- default minus encoding and fileformat
 		},
 		extensions = { nvim_tree },
